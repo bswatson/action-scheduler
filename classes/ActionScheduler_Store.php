@@ -121,6 +121,28 @@ abstract class ActionScheduler_Store {
 	abstract public function get_status( $action_id );
 
 	/**
+	 * Get the last time the action was attempted.
+	 *
+	 * The time should be given in GMT.
+	 *
+	 * @param string $action_id
+	 *
+	 * @return DateTime
+	 */
+	abstract public function get_last_attempt( $action_id );
+
+	/**
+	 * Get the last time the action was attempted.
+	 *
+	 * The time should be given in the local time of the site.
+	 *
+	 * @param string $action_id
+	 *
+	 * @return DateTime
+	 */
+	abstract public function get_last_attempt_local( $action_id );
+
+	/**
 	 * @param string $claim_id
 	 * @return array
 	 */
@@ -139,4 +161,3 @@ abstract class ActionScheduler_Store {
 		return self::$store;
 	}
 }
- 
